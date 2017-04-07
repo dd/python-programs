@@ -9,6 +9,7 @@
     6. меньше объединений строк в формате js, больше нормального форматирования
     7. файлы если ты открываешь необходимо закрывать в конце, либо использовать
        with он делает это автоматически
+    8. зачем преврощать инт в строку если в строку можно передать инт?
 """
 
 from datetime import datetime
@@ -42,8 +43,8 @@ time = datetime.strftime(datetime.now(), "%Y.%m.%d %H:%M:%S")
 with open('loge %s.txt' % time, 'w') as log:
     for i in range(user_one,user_two + 1):
         if i % 2 == 0:
-            log.write(str(i) + '   :четное \n')
+            log.write('%d   :четное \n' % i)
         else:
-            log.write(str(i) + '   :нечетное \n')
+            log.write('%d   :нечетное \n' % i)
 
 print('Файл добавлен')
