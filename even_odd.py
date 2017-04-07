@@ -1,4 +1,8 @@
+#!/usr/bin/env python3
+
 """
+
+
     1. именуй файлы нормально (меньше пробелов и верхнего регистра)
     2. кто тебя надоумил ставить пробел перед скобкой? (print ())
     3. зачем ты импортируешь весь модуль? from datetime import * импортируй
@@ -13,6 +17,7 @@
     9. меньше дублирования кода - DRY
     10. зачем отдельные переменные?
     11. не экранируй все ошибки разом только те которые тебе нужны
+    12. формируй правильно файл если это просто исполняемый скрипт
 
     несколько пожеланий, лучше форматируй свой код, иначе читаемость портится
     для информативных строк используй двойные кавычки, для каких-либо
@@ -20,34 +25,35 @@
     подключения файла) - одинарные
 """
 
-from datetime import datetime
+if __name__ == '__main__':
+    from datetime import datetime
 
-print("Начало диапазона", end='')
-while True:
-    try:
-        user_one = int(input(": "))
-    except ValueError:
-        print("Только числа")
-        continue
-    break
-
-print("Конец диапазона", end='')
-while True:
-    try:
-        user_two = int(input(": "))
-    except ValueError:
-        print("Только числа")
-        continue
-
-    if user_two < user_one:
-        print("Второе больше первого!")
-        continue
-    else:
+    print("Начало диапазона", end='')
+    while True:
+        try:
+            user_one = int(input(": "))
+        except ValueError:
+            print("Только числа")
+            continue
         break
 
-time = datetime.strftime(datetime.now(), "%Y.%m.%d %H:%M:%S")
-with open("loge %s.txt" % time, 'w') as log:
-    for i in range(user_one, user_two+1):
-        log.write("%d   :%s\n" % (i, "четное" if i % 2 == 0 else "нечетное"))
+    print("Конец диапазона", end='')
+    while True:
+        try:
+            user_two = int(input(": "))
+        except ValueError:
+            print("Только числа")
+            continue
 
-print("Файл добавлен")
+        if user_two < user_one:
+            print("Второе больше первого!")
+            continue
+        else:
+            break
+
+    time = datetime.strftime(datetime.now(), "%Y.%m.%d %H:%M:%S")
+    with open("loge %s.txt" % time, 'w') as log:
+        for i in range(user_one, user_two+1):
+            log.write("%d   :%s\n" % (i, "четное" if i % 2 == 0 else "нечетное"))
+
+    print("Файл добавлен")
