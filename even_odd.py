@@ -22,7 +22,7 @@
 
 from datetime import datetime
 
-print("Начало диапазона: ")
+print("Начало диапазона", end='')
 while True:
     try:
         user_one = int(input(": "))
@@ -31,7 +31,7 @@ while True:
         continue
     break
 
-print("Конец диапазона: ")
+print("Конец диапазона", end='')
 while True:
     try:
         user_two = int(input(": "))
