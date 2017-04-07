@@ -1,5 +1,5 @@
 from datetime import *
-print ('Начало диапозона: ')
+print ('Начало диапазона: ')
 t = True
 while t:
     try:
@@ -9,7 +9,7 @@ while t:
         continue
     break
 
-print ('Конец диапозона: ')
+print ('Конец диапазона: ')
 p = True
 while p:
     try:
