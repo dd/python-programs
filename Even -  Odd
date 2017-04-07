@@ -1,5 +1,7 @@
-from datetime import *
-print ('Начало диапазона: ')
+from datetime import datetime, date
+import sys
+import os
+print ('Начало диапозона: ')
 t = True
 while t:
     try:
@@ -9,7 +11,7 @@ while t:
         continue
     break
 
-print ('Конец диапазона: ')
+print ('Конец диапозона: ')
 p = True
 while p:
     try:
@@ -24,14 +26,15 @@ while p:
         continue
     else:
         break
-
-time = (datetime.strftime(datetime.now(), "%Y.%m.%d %H:%M:%S"))
-log = open('loge ' + time + '.txt', 'w')
+d = date.today()
+time = datetime.now().date()
+log = open('log ' + str (time) + '.txt', 'w')
 for i in range(user_one,user_two + 1):
     if i % 2 == 0:
-        log.write (str (i) + '   :четное \n')
+        log.write (str (i) + '  :четное \n')
     else:
-        log.write(str(i) + '   :нечетное \n')
-print ('Файл добавлен')
+        log.write(str (i) + '  :нечетное \n')
+print ('Файл добавлен в ' + os.path.realpath(os.path.dirname(sys.argv[0])))
+
 
 
