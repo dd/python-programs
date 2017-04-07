@@ -11,38 +11,43 @@
        with он делает это автоматически
     8. зачем преврощать инт в строку если в строку можно передать инт?
     9. меньше дублирования кода - DRY
+
+    несколько пожеланий, лучше форматируй свой код, иначе читаемость портится
+    для информативных строк используй двойные кавычки, для каких-либо
+    внутренних значений (например ключ словаря или скажем флаг формата
+    подключения файла) - одинарные
 """
 
 from datetime import datetime
 
-print('Начало диапазона: ')
+print("Начало диапазона: ")
 t = True
 while t:
     try:
-        user_one = int(input(': '))
+        user_one = int(input(": "))
     except:
         print("Только числа")
         continue
     break
 
-print('Конец диапазона: ')
+print("Конец диапазона: ")
 p = True
 while p:
     try:
-        user_two = int(input(': '))
+        user_two = int(input(": "))
     except:
         print("Только числа")
         continue
 
     if user_two < user_one:
-        print('Второе больше первого!')
+        print("Второе больше первого!")
         continue
     else:
         break
 
 time = datetime.strftime(datetime.now(), "%Y.%m.%d %H:%M:%S")
-with open('loge %s.txt' % time, 'w') as log:
-    for i in range(user_one,user_two + 1):
+with open("loge %s.txt" % time, 'w') as log:
+    for i in range(user_one, user_two+1):
         log.write("%d   :%s\n" % (i, "четное" if i % 2 == 0 else "нечетное"))
 
-print('Файл добавлен')
+print("Файл добавлен")
