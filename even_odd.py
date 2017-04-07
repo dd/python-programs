@@ -10,6 +10,7 @@
     7. файлы если ты открываешь необходимо закрывать в конце, либо использовать
        with он делает это автоматически
     8. зачем преврощать инт в строку если в строку можно передать инт?
+    9. меньше дублирования кода - DRY
 """
 
 from datetime import datetime
@@ -42,9 +43,6 @@ while p:
 time = datetime.strftime(datetime.now(), "%Y.%m.%d %H:%M:%S")
 with open('loge %s.txt' % time, 'w') as log:
     for i in range(user_one,user_two + 1):
-        if i % 2 == 0:
-            log.write('%d   :четное \n' % i)
-        else:
-            log.write('%d   :нечетное \n' % i)
+        log.write("%d   :%s\n" % (i, "четное" if i % 2 == 0 else "нечетное"))
 
 print('Файл добавлен')
