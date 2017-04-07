@@ -25,7 +25,7 @@ while p:
     else:
         break
 
-time = (datetime.strftime(datetime.now(), "%Y.%m.%d "))
+time = (datetime.strftime(datetime.now(), "%Y.%m.%d %H:%M:%S"))
 log = open('loge ' + time + '.txt', 'w')
 for i in range(user_one,user_two + 1):
     if i % 2 == 0:
