@@ -1,0 +1,5 @@
+def num (num):
+    ot = num / 2 + 7
+    return ot
+age = num (14)
+print (age)
