@@ -21,3 +21,13 @@ pol ()
 def damir (name="Дамир", do='ничего', time='сейчас'):
     print (name,do,time)
 damir (name='альберт', do='читает')
+
+
+
+бесконечное количество аргументов в функции
+def calc (*args):
+    total = 0
+    for i in args:
+        total+=i
+    print (total)
+calc(151,786,36)
