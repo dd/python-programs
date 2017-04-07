@@ -15,3 +15,9 @@ def pol (p ='Unknown'):
 pol ('М')
 pol ('Ж')
 pol ()
+
+
+изменение значений:
+def damir (name="Дамир", do='ничего', time='сейчас'):
+    print (name,do,time)
+damir (name='альберт', do='читает')
