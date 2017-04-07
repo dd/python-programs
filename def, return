@@ -3,3 +3,15 @@ def num (num):
     return ot
 age = num (14)
 print (age)
+
+
+Значение по умолчанию:
+def pol (p ='Unknown'):
+    if p == 'М':
+        p = 'М'
+    elif p == 'Ж':
+        P = 'Ж'
+    print (p)
+pol ('М')
+pol ('Ж')
+pol ()
