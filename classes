@@ -1,0 +1,25 @@
+# classes
+
+class damir:
+    life = 10
+
+    def attack (self):
+        print ('Айй')
+        self.life -=1
+
+    def show_life (self):
+        if self.life <=0:
+            print ('I am dead')
+        print ('life: ' + str (self.life))
+
+one = damir ()
+one.attack()
+one.attack()
+one.show_life()
+
+two = damir ()
+two.show_life()
+two.attack()
+two.attack()
+two.show_life()
+
