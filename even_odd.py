@@ -7,6 +7,8 @@
        PEP0008 (http://pep8.ru/doc/pep8/ - Пустые строки)
     5. зачем ты обернул вывод datetime.strftime в tuple?
     6. меньше объединений строк в формате js, больше нормального форматирования
+    7. файлы если ты открываешь необходимо закрывать в конце, либо использовать
+       with он делает это автоматически
 """
 
 from datetime import datetime
@@ -37,10 +39,11 @@ while p:
         break
 
 time = datetime.strftime(datetime.now(), "%Y.%m.%d %H:%M:%S")
-log = open('loge %s.txt' % time, 'w')
-for i in range(user_one,user_two + 1):
-    if i % 2 == 0:
-        log.write(str(i) + '   :четное \n')
-    else:
-        log.write(str(i) + '   :нечетное \n')
+with open('loge %s.txt' % time, 'w') as log:
+    for i in range(user_one,user_two + 1):
+        if i % 2 == 0:
+            log.write(str(i) + '   :четное \n')
+        else:
+            log.write(str(i) + '   :нечетное \n')
+
 print('Файл добавлен')
