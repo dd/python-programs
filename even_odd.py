@@ -5,10 +5,10 @@
        только ту единственную функциою которую используешь
     4. меньше лишних ненужных пустых строк, кодстиль смотреть в
        PEP0008 (http://pep8.ru/doc/pep8/ - Пустые строки)
+    5. зачем ты обернул вывод datetime.strftime в tuple?
 """
 
 from datetime import datetime
-
 
 print('Начало диапазона: ')
 t = True
@@ -35,7 +35,7 @@ while p:
     else:
         break
 
-time =(datetime.strftime(datetime.now(), "%Y.%m.%d %H:%M:%S"))
+time = datetime.strftime(datetime.now(), "%Y.%m.%d %H:%M:%S")
 log = open('loge ' + time + '.txt', 'w')
 for i in range(user_one,user_two + 1):
     if i % 2 == 0:
