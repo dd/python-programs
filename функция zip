@@ -1,0 +1,5 @@
+name = ['Дамир', 'Альберт', 'Мама']
+last_name = ['Масон', 'Сафин', 'Мамановна']
+names = zip(name,last_name)
+for a,b in names:
+    print (a + ' ' +  b)
