@@ -1,0 +1,24 @@
+import random
+import urllib.request
+import os, sys
+
+def download_web_image (url):
+    name = random.randrange (1,1000)
+    full_name = (str (name) + '.jpg')
+    urllib.request.urlretrieve(url, full_name)
+    print ('Фотография: ' + full_name + ' была скачена в: ' + os.path.realpath(os.path.dirname(sys.argv[0])))
+
+print ("Url ")
+p = True
+while p:
+    user = input(": ")
+    try:
+        download_web_image(user)
+    except:
+        print ('Произошла ошибка, ссылка указана неверно')
+        continue
+    user_two = input("продолжить (Да/Нет)")
+    if user.two.title () == "Да":
+        continue
+    else:
+        break

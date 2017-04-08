@@ -1,0 +1,6 @@
+def nums (num):
+    one, *mid, end = num
+    m = sum (num) / len (num)
+    print (m)
+
+nums([15,36,102,85,96,758,36,15,36])
